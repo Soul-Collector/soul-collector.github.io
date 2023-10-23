@@ -1,5 +1,3 @@
-Here you can say lots of fun things about your site.
+Understanding from scratch is a blog post series that will take you on a journey of understanding the nitty gritty details of engineering tasks. 
 
-Maybe say a some things about yourself.
-
-Or maybe what you plan to blog about.
+We will start from scratch and build from bottom up.
