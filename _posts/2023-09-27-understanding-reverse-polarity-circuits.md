@@ -42,7 +42,7 @@ Several different components could be used for implementing a reverse polarity p
 The table below gives you an overview of the different types of components that can be used to implement reverse polarity circuit with reference to the parameters listed above.
 
 ---
-| Features	| Schottky Diodes	| P-Channel MOSFETs	| N-Channel MOSFETs	| TVS Diodes	| Automotive-grade Reverse Polarity Protection ICs	| Fuses|
+| Features	| Schottky Diodes	| P-Channel MOSFETs	| N-Channel MOSFETs	| TVS Diodes	| Automotive-grade Reverse Polarity Protection ICs	| Fuses <br/> |
 | ---------- |  ------------ | ------------ | ---------- |  ------------ | ------------ | ---------- | 
 | Voltage rating	                    | Low to moderate	| High	| High	| High	| High	| High | High |
 | Current handling capability	        | Moderate	| High	| High	| Moderate to High	| Moderate to High	| High |
