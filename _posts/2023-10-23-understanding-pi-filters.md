@@ -24,7 +24,7 @@ In order to be able to design the PI filter, the noise frequency spectrum of the
  
 2. Establish the frequency range to filter: Depending on the frequency determined in 1, the range of frequency to be filtered out can be determined. A guideline would be to design the filter to attenuate frequencies 10 times higher than the switching frequency. Hence, the resonant frequency can be determined. This is the frequency at which the PI filter would resonant and create a low-impedance path to ground for noise. 
 
-3. Choose capacitor and inductor values: The following equation can be used to determine the capacitor and inductor values C = 1 / (4 * pi^2 * L * f^2)
+3. Choose capacitor and inductor values: The following equation can be used to determine the capacitor and inductor values C = 1 / (4 * pi^2 * L * f^2), where C and L are the capacitor and the inductor values respectively and f is the resonant frequency.
 
 4. Simulate: A good rule of thumb is to simulate your filter using a circuit simulation tool to ensure its performance. You can alter the values of the components to attain the desired performance
 

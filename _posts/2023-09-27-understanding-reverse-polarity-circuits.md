@@ -6,7 +6,7 @@ This blog post will go over the details and different ways of implementing a rev
 
 Reverse polarity protection is necessary in order to ensure that no damage occurs to the protected components in a given circuit when the polarity of the supply voltage reverses.
 
-## Standards for reverse polarity protection
+## What are the standards for reverse polarity protection?
 
 > [ISO 16750-2:2023](https://www.iso.org/standard/76119.html) provides detailed requirements for reverse battery protection in terms of voltage levels and timings to ensure that the electronic equipment can withstand reverse battery voltage without getting damaged or malfunctioning. 
 >
@@ -20,7 +20,7 @@ Reverse polarity protection is necessary in order to ensure that no damage occur
 
 *Source: GPT3.5*
 
-## Designing a reverse polarity protection circuit
+## How to designing a reverse polarity protection circuit?
 
 Before we dive into designing the actual reverse polarity protection circuit, it is important to have an overview on the application that the circuit will be designed for to be able to select the corresponding components. Below is a list of parameters of the components, which will be used to design the reverse polarity protection circuit, to bear in mind. 
 
@@ -35,16 +35,15 @@ Before we dive into designing the actual reverse polarity protection circuit, it
 
 
 
-## Different types of implementation of reverse polarity protection
+## What are the different types of implementation of reverse polarity protection?
 
 Several different components could be used for implementing a reverse polarity protection circuit. These components include, but are not limited to Schottky diode, P-channel MOSFETs, N-channel MOSFETs, Transient-voltage-suppression (TVS) diodes, automotive-grade reverse polarity protection ICs and fuses.
 
 The table below gives you an overview of the different types of components that can be used to implement reverse polarity circuit with reference to the parameters listed above.
 
----
-| Features	| Schottky Diodes	| P-Channel MOSFETs	| N-Channel MOSFETs	| TVS Diodes	| Automotive-grade Reverse Polarity Protection ICs	| Fuses <br/> |
+<!-- | Features	| Schottky Diodes	| P-Channel MOSFETs	| N-Channel MOSFETs	| TVS Diodes	| Automotive-grade Reverse Polarity Protection ICs	| Fuses |
 | ---------- |  ------------ | ------------ | ---------- |  ------------ | ------------ | ---------- | 
-| Voltage rating	                    | Low to moderate	| High	| High	| High	| High	| High | High |
+| Voltage rating	                    | Low to moderate	| High	| High	| High	| High	| High |
 | Current handling capability	        | Moderate	| High	| High	| Moderate to High	| Moderate to High	| High |
 | Power loss	                        | Low	| Low	| Low	| Moderate	| Moderate to high	| Low |
 | Efficiency	                        | High	| High	| High	| Moderate	| Moderate to high	| High |
@@ -53,7 +52,115 @@ The table below gives you an overview of the different types of components that 
 |Size	                                | Small	| Small	| Small	| Small	| Small	| Small |
 | Cost	                                | Low	| Moderate to high	| Moderate to high	| Moderate	| High	| Low |
 | Reliability and durability	        | High	| High	| High	| High	| High	| High |
-|Compatibility with other components	| Compatible with most components. Can be placed in series with the load to prevent reverse voltage from reaching the circuit	| Requires additional components such as a fate driver and a voltage shifted to ensure proper function	| Requires additional components such as a gate driver and a voltage shifted to ensure proper function	    | Compatible with most components	| Compatible with most components	| Compatible with most components |
+|Compatibility with other components	| Compatible with most components. Can be placed in series with the load to prevent reverse voltage from reaching the circuit	| Requires additional components such as a fate driver and a voltage shifted to ensure proper function	| Requires additional components such as a gate driver and a voltage shifted to ensure proper function	    | Compatible with most components	| Compatible with most components	| Compatible with most components | -->
+---
+
+<table>
+    <thead>
+        <tr>
+            <th>Features</th>
+            <th>Schottky Diodes</th>
+            <th>P-Channel MOSFETs</th>
+            <th>N-Channel MOSFETs</th>
+            <th>TVS Diodes</th>
+            <th>Automotive-grade Reverse Polarity Protection ICs</th>
+            <th>Fuses</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>Voltage rating</th>
+            <td>Low to moderate</td>
+            <td>High</td>
+            <td>High</td>
+            <td>High</td>
+            <td>High</td>
+            <td>High</td>
+        </tr>
+        <tr>
+            <th>Current handling capability</th>
+            <td>Moderate</td>
+            <td>High</td>
+            <td>High</td>
+            <td>Moderate to High</td>
+            <td>Moderate to High</td>
+            <td>High</td>
+        </tr>
+        <tr>
+            <th>Power loss</th>
+            <td>Low</td>
+            <td>Low</td>
+            <td>Low</td>
+            <td>Moderate</td>
+            <td>Moderate to high</td>
+            <td>Low</td>
+        </tr>
+        <tr>
+            <th>Efficiency</th>
+            <td>High</td>
+            <td>High</td>
+            <td>High</td>
+            <td>Moderate</td>
+            <td>Moderate to high</td>
+            <td>High</td>
+        </tr>
+        <tr>
+            <th>Switching speed</th>
+            <td>High</td>
+            <td>High</td>
+            <td>High</td>
+            <td>Fast</td>
+            <td>Fast</td>
+            <td>Slow</td>
+        </tr>
+        <tr>
+            <th>Temperature range</th>
+            <td>Limited</td>
+            <td>Wide</td>
+            <td>Wide</td>
+            <td>Wide</td>
+            <td>Wide</td>
+            <td>Wide</td>
+        </tr>
+        <tr>
+            <th>Size</th>
+            <td>Small</td>
+            <td>Small</td>
+            <td>Small</td>
+            <td>Small</td>
+            <td>Small</td>
+            <td>Small</td>
+        </tr>
+        <tr>
+            <th>Cost</th>
+            <td>Low</td>
+            <td>Moderate to high</td>
+            <td>Moderate to high</td>
+            <td>Moderate</td>
+            <td>High</td>
+            <td>Low</td>
+        </tr>
+        <tr>
+            <th>Reliability and durability</th>
+            <td>High</td>
+            <td>High</td>
+            <td>High</td>
+            <td>High</td>
+            <td>High</td>
+            <td>High</td>
+        </tr>
+        <tr>
+            <th>Compatibility with other components</th>
+            <td>Compatible with most components. Can be placed in series with the load to prevent reverse voltage from reaching the circuit</td>
+            <td>Requires additional components such as a fate driver and a voltage shifted to ensure proper function</td>
+            <td>Requires additional components such as a gate driver and a voltage shifted to ensure proper function</td>
+            <td>Compatible with most components</td>
+            <td>Compatible with most components</td>
+            <td>Compatible with most components</td>
+        </tr>
+    </tbody>
+</table>
+
 ---
 
 

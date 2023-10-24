@@ -14,29 +14,90 @@ DC-link capacitors are of essence in most power electronics systems. They serve 
 
 - Surge protection: Surges or voltage spikes may occur during operation and could damage components in a system. DC-link capacitors can act as surge protection, with their ability to absorb any surges or voltage spikes that may occur in the system.
 
-# How to size DC link capacitors?
-
-The selection and sizing of the capacitor depends on several factors. Below are some guidelines to follow when sizing DC link capacitors:
-
-1. Determine the maximum voltage and current requirements of the system
-2. Determine the required energy storage, based on application requirements
-3. Calculate the value of capacitance required with the help of the following formula: E = 0.5 x C x V^2, where E is the energy in joules, C is the capacitance in farads, and V is the voltage across the capacitor.
-4. Select a capacitor value slightly higher than the value that is calculated value to warrant the desired energy storage.
-5. Ensure that the temperature rating of the capacitor is higher than the operating temperature of the application
-
-Below is an example for sizing a DC link capacitor intended for a BLDC motor application operating at maximum of 48 V and maximum of 10 A. <br/> 
-Typically, energy storage for BLDC motors is about 10 joules. Hence, the value of teh capacitance can be calculated in the following manner: <br/>
-C = 2E / V^2 <br/>
-C = 2 x 10 / 48^2 <br/>
-C = 8.68 x 10^-6 F <br/>
-
-Hence, the capacitance of the DC link capacitor should be at least 8.86 microfarads with an appropriate thermal rating.
-
 ## How to decide between electrolytic or ceramic capacitors?
 
 The decision between electrolytic and ceramic capacitor depends on the application requirements of the system. 
 
+<!-- | Feature | Electrolytic capacitors | Ceramic capacitors |
+| -------- | -------- | -------- |
+| Capacitance values | Have higher capacitances values | Lower capacitance values |
+| Energy storage | Support high energy storage due to high capacitance values | Low energy storage, suitable in high-frequency filtering applications |
+| Voltage rating | Higher voltage ratings | Lower voltage ratings |
+| Size | Larger size | Compact size |
+| AC/DC circuits | Electrolytic capacitors are polarized, i.e., they have positive and negative terminals. Hence, they are unsuitable in AC circuits | Ceramic capacitors are non-polarized. Hence, can be used in both AC and DC circuits |
+| Temperature stability | Lower temperature stability | Higher temperature stability | -->
 
+<table>
+    <thead>
+        <tr>
+            <th>Feature</th>
+            <th>Electrolytic capacitors</th>
+            <th>Ceramic capacitors</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>Capacitance values</th>
+            <td>Have higher capacitances values</td>
+            <td>Lower capacitance values</td>
+        </tr>
+        <tr>
+            <th>Energy storage</th>
+            <td>Support high energy storage due to high capacitance values</td>
+            <td>Low energy storage, suitable in high-frequency filtering applications</td>
+        </tr>
+        <tr>
+            <th>Voltage rating</th>
+            <td>Higher voltage ratings</td>
+            <td>Lower voltage ratings</td>
+        </tr>
+        <tr>
+            <th>Size</th>
+            <td>Larger size</td>
+            <td>Compact size</td>
+        </tr>
+        <tr>
+            <th>AC/DC circuits</th>
+            <td>Electrolytic capacitors are polarized, i.e., they have positive and negative terminals. Hence, they are unsuitable in AC circuits</td>
+            <td>Ceramic capacitors are non-polarized. Hence, can be used in both AC and DC circuits</td>
+        </tr>
+        <tr>
+            <th>Temperature stability</th>
+            <td>Lower temperature stability</td>
+            <td>Higher temperature stability</td>
+        </tr>
+    </tbody>
+</table>
+
+
+## How to size DC link capacitors?
+
+The selection and sizing of the capacitor depends on several factors. Below are some guidelines to follow when sizing DC link capacitors:
+
+1. Determine the maximum voltage and current requirements of the system
+2. Determine the acceptable voltage ripple
+3. Calculate the DC link capacitor value using teh following equation: 
+<br/> 
+    C = (I x t) / Vripple = I / (f x Vripple)
+
+    where, 
+    <br/> C is the capacitance in Farads,
+    <br/> I is the maximum current draw of the motor in amps,
+    <br/> t is the period of the voltage ripple (usually taken as the inverse of the switching frequency of the motor controller), 
+    <br/> and Vripple is the desired voltage ripple on the DC link
+
+### Is there an example?
+
+Certainly all the things in the world are much simpler to understand with the help of an example. 
+
+So let's take an example for sizing of DC link capacitors fot a motor control application. Let's assume the following before we proceed:
+ - The maximum current drawn by the motor is around 10 A
+ - DC link voltage is 12 V
+ - The acceptable voltage ripple is 10% of the DC link voltage, i.e., 1.2 V
+ - The switching frequency of the motor control is 20 kHz
+
+ Hence, 
+ <br/> C = 10 A / (20 kHz x 1.2 V) = 416 microfarad
 
 
 
